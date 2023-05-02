@@ -1,0 +1,19 @@
+        {% extends 'base.html' %}
+
+       {% block content %}
+
+
+        <div class="card" style="width: 18rem; display: flex; column-gap: 15px; padding: 20px; padding-top: 50px;">
+            <img src="{{ movie_film[0]['image'] }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ movie_film[0]['name'] }}</h5>
+            
+            <p class="card-text">{{ movie_film[0]['producer'] }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">IMDB: {{ movie_film[0]['imdb'] }}</li>
+            <li class="list-group-item">Status: {{ movie_film[0]['status'] }}</li>
+            </ul>
+        </div>
+
+        {% endblock %}

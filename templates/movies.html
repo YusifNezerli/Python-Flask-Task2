@@ -1,0 +1,25 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    {% if is_active %}
+
+    {% for i in movies %}
+
+    <div class="card" style="width: 18rem; display: flex; column-gap: 15px; padding: 20px; padding-top: 50px;">
+        <a style="text-decoration: none;" href="/movie/{{ i['id'] }}"> <img src="{{i['image']}}" class="card-img-top" alt="{{i['name']|upper}}"></imgsrc></a> 
+        <div class="card-body">
+          <h5 class="card-title"><a style="text-decoration: none;" href="/movie/{{ i['id'] }}">{{i['name']|upper}}</a></h5>
+          <p class="card-text">Producer: {{i['producer']}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">IMDB: {{i['imdb']}}</li>
+          <li class="list-group-item">Status: {{i['status']}}</li>
+        </ul>
+      </div>
+
+      {% endfor %}
+
+      {% endif %}
+      
+      {% endblock %}
